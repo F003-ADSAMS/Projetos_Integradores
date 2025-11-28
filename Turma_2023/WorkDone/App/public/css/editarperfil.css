@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+:root {
+    --border-radius: 1.3rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 1rem;
+    --sticky-top-left: 7rem;
+    --sticky-top-right: 18rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 10px gray;
+    background-color: white;
+    z-index: 1000;
+    height: 85px;
+ } 
+
+ body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(235, 235, 235);
+    --sb-track-color: #eeeded;
+    --sb-thumb-color: #333333;
+    --sb-size: 2px;
+ }
+ 
+ body::-webkit-scrollbar {
+    width: var(--sb-size);
+ }
+ 
+ body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+ }
+ 
+ body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+ }
+ 
+ @supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+ }
+ 
+
+.navbar {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 35px;
+    color: black;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.profile-photo {
+    width: 2.7rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--btn-padding);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background: black;
+    color: white;
+}
+
+.text-bold {
+    font-weight: 500;
+}
+
+.text-muted {
+    color: rgb(129, 129, 129);
+    font-size: 0.7rem;
+}
+
+.text-view {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #3b3a3a;
+    text-decoration: none;
+}
+
+.text-view:hover {
+    color: purple;
+}
+
+.handle h4 {
+    font-weight: 500;
+    color: black;
+    font-size: 1.1rem;
+}
+
+.bn3 {
+    display: inline-block;
+    padding: 0.5em 1.7em;
+    margin: 0 0.1em 0.1em 0;
+    border: 0.16em solid rgb(0, 0, 0); /* alterado de branco para preto */
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000000; 
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.253); 
+    text-align: center;
+    transition: all 0.2s;
+    margin: 1.6rem 1rem;
+}
+
+.bn3:hover {
+    color: white;
+    background-color: rgb(0, 0, 0); 
+}
+
+.form {
+    width: 100%;
+}
+
+/* Organização geral */
+.formPostagem {
+    max-width: 980px;
+    margin: 150px auto;
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formPostagem header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #444;
+}
+
+.details .title {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+}
+
+/* Campos organizados em grid */
+.fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Campo de entrada padrão */
+.input-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+}
+
+.input-field input, 
+.input-field textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* Área de descrição ocupando 100% */
+.input-field.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Imagem de perfil */
+.imagem-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-preview {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+/* Botão de submissão */
+.buttons_submit {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #333;
+}
+
+
+/* From Uiverse.io by xopc333 */ 
+.button {
+    display: block;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    margin: 0;
+    overflow: hidden;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+  }
+  
+  .button:before,
+  .button:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 7px;
+  }
+  
+  .button:before {
+    border: 4px solid #f0eeef;
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+  }
+  
+  .button:after {
+    border: 4px solid #96daf0;
+    transform: scale(1.3);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+  }
+  
+  .button:hover:before,
+  .button:focus:before {
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .button:hover:after,
+  .button:focus:after {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+  }
+  
+  .button-box {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .button-elem {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 17px 18px 0 18px;
+    transform: rotate(180deg);
+    fill: #f0eeef;
+  }
+  
+  .button:hover .button-box,
+  .button:focus .button-box {
+    transition: 0.4s;
+    transform: translateX(-56px);
+  }
+  
+@media screen and (max-width: 768px) {
+    .navbar {
+        
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .navbar .logo a {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        padding: var(--btn-padding);
+        font-size: 0.8rem;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .formPostagem {
+        width: 90%;
+        margin: 100px auto;
+        padding: 15px;
+    }
+
+    .details .title {
+        font-size: 16px;
+    }
+
+    .fields {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+
+    .input-field label {
+        font-size: 12px;
+    }
+
+    .input-field input,
+    .input-field textarea {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .profile-preview {
+        width: 60px;
+        height: 60px;
+    }
+
+    .imagem-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .buttons_submit {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar .logo a {
+        font-size: 24px;
+    }
+
+    .formPostagem header {
+        font-size: 20px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.7rem;
+    }
+
+    .details .title {
+        font-size: 14px;
+    }
+
+    .fields {
+        gap: 10px;
+    }
+
+    .input-field input,
+    .input-field textarea {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .profile-preview {
+        width: 50px;
+        height: 50px;
+    }
+}

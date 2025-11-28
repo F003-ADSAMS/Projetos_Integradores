@@ -1,0 +1,472 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Garantir que a altura total seja usada */
+    overflow: hidden; /* Impedir scroll global */
+    display: flex;
+    flex-direction: column;
+}
+/* Geral */
+body {
+    font-family: "Arial", sans-serif;
+    background-color: rgb(253, 253, 253) !important;
+    color: #14171a;
+    margin: 0;
+    padding: 0;
+
+    background-image: url('/assets/Posts_Index.png');
+    background-size: cover;
+    background-position: center;
+
+}
+/* Camada de preto */
+body:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+:root {
+    --global-color: #3498db;
+}
+
+/* Container principal */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+ 
+}
+
+/* Header */
+h1 {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold; 
+}
+
+.posts-container {
+    display: flex;
+    gap: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: light; 
+    
+}
+
+/* menu */
+
+.menu {
+    display: flex;
+    padding: 20px;
+    width: 33%;
+    flex-direction: column;
+    border: 1px solid #cfd2d3;
+    height: fit-content;
+    border-radius: 10px;
+    font-size: large
+  }
+
+
+.menu button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+
+    background-color: #fff;
+    border-radius: 50px;
+    color: #333;
+    font-weight: 600;
+    padding: 10px 15px;
+    text-align: center;
+    border: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+.menu button:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.menu button img {
+    width: 20px;
+    height: 20px;
+    border-radius: 0% !important;
+    margin: 0;
+}
+
+.menu select {
+    width: 160px !important;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Formulário de criação de posts */
+.comment form {
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.container form textarea {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: none;
+    background-color: #f5f8fa;
+    margin-top: 5px;
+    height: 50px;
+}
+
+.container form button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Lista de posts */
+.posts-list {
+    width: 50%;
+    padding: 20px;
+    border: 1px solid #cfd2d3;
+    border-radius: 10px;
+    flex-grow: 1;
+    height: calc(100vh - 40px); /* Ajusta para compensar os paddings/margens */
+    overflow-y: auto; /* Permite rolagem vertical apenas na lista */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    padding-bottom: 50px;
+}
+.posts-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Edge */
+}
+
+.posts-list form{
+    border-color: white !important;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 20px !important;
+    box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.1) !important;
+    padding: 20px;
+}
+
+.user-image{
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.posts-list form textarea{
+    background-color: white;
+}
+
+.user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 2px;
+    object-fit: cover;
+}
+
+.card {
+    flex-direction: row !important;
+    padding: 10px;
+    border-color: white !important;
+
+    margin-bottom: 15px;
+    background-color: #fff;
+
+    border-radius: 20px !important;
+    box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.1) !important;
+    padding-right: 50px !important;
+}
+
+
+
+.card img{
+    margin-right: 5px;
+}
+
+.card-info {
+    margin-top: 12px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #14171a;
+}
+
+.text-muted {
+    font-size: 15px;
+    color: #657786;
+}
+
+/* Botão de ações */
+.card .btn {
+    background-color: #e1e8ed;
+    color: #14171a;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+    background-color: #cfd9de;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #657786;
+    margin-top: 20px;
+}
+
+.users-list {
+    height: fit-content;
+    padding: 20px;
+    width: 30%;
+    border: 1px solid #cfd2d3;
+    border-radius: 10px;
+}
+
+.users-list h2 {
+    color:white;
+}
+
+.users-list a {
+    color: black;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+}
+
+.user-info {
+    display: flex;
+}
+
+.user-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-card-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-left: 5px;
+}
+
+.comments {
+    display: flex;
+}
+
+.comments a {
+}
+
+.comments img {
+    width: 20px;
+    height: 20px;
+    border-radius: 0% !important;
+    margin: 0;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.cancel-btn {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    color: black;
+}
+
+
+
+/* Shoe-item */
+.shoe-item {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.2s ease;
+}
+
+.shoe-info-name {
+    font-size: large;
+    color: black;
+    white-space: nowrap; /* Garante que o texto fique em uma única linha */
+    overflow: hidden; /* Esconde o texto que ultrapassar o limite */
+    text-overflow: ellipsis; /* Adiciona os "..." ao final do texto */
+    max-width: 230px; /* Ajuste a largura máxima para se adequar ao layout */
+}
+
+@media (min-width: 900px) {
+    .shoe-item {
+        padding-block: 20px;
+        width: 300px;
+        margin: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .shoe-item {
+        padding: 10px;
+        width: fit-content;
+        margin: 20px 5px;
+    }
+}
+
+.shoe-item:hover {
+    transform: scale(1.01);
+}
+
+.shoe-item img {
+    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 5%;
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+}
+
+.shoe-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 5% 0;
+}
+
+.shoe-info-name {
+    font-size: large;
+    color: black;
+}
+
+.shoe-info-otherinfo {
+    font-size: medium;
+    color: black;
+}
+
+.shoe-item form button {
+    background: none; /* Remove o fundo padrão do botão */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 0; /* Remove o preenchimento do botão */
+    width: 60px;
+    height: 60px;
+    cursor: pointer; /* Adiciona o cursor de ponteiro */
+}
+
+/* Botão de Seguir */
+.follow-btn {
+    background-color: #3924a3; /* Verde, por exemplo */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Ajuste de tamanho */
+    border-radius: 25px; /* Borda arredondada */
+    transition: background-color 0.3s ease; /* Animação de hover */
+    margin-top: 0 !important;
+}
+
+.follow-btn:hover {
+    background-color: #3924a3; /* Cor mais escura no hover */
+}
+
+/* Botão de Postar */
+.container form button {
+    background-color: #3924a3; /* Azul, por exemplo */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Ajuste de tamanho */
+    border-radius: 25px; /* Borda arredondada */
+    transition: background-color 0.3s ease; /* Animação de hover */
+}
+
+.container form button:hover {
+    background-color: #3f28b4; /* Cor mais escura no hover */
+}
+
+.delete-form {
+    border: none !important;
+    padding: 0px !important;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    height: 0px !important;
+    width: 0px !important;
+    top: 15px;
+    right: 30px;
+    display: flex;
+
+}
+
+.delete-btn {
+    height: 0px !important;
+    width: 0px !important;
+    padding: 0px !important;
+}
+
+.delete-btn img {
+    height: 20px;
+    width: 20px;
+}
+
+
+
+

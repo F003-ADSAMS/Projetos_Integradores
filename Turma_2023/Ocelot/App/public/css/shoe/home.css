@@ -1,0 +1,170 @@
+body {
+    background-color: rgb(247, 247, 247) !important;
+}
+
+a {
+    text-decoration: none !important;
+    color: white;
+}
+
+
+.shoe-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.title{  
+    display: flex;  
+    flex-direction: row;  
+}
+
+.title > :nth-child(2) {  
+    color: grey;
+    padding: 0px 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: light; 
+}
+
+@media (max-width: 900px) {
+    .shoe-container {
+        justify-content: space-evenly;
+    }
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.shoe-container .shoe-item {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: light; 
+}
+
+@media (min-width: 900px) {
+    .shoe-container .shoe-item {
+        padding-block: 20px;
+        width: 300px;
+        margin: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .shoe-container .shoe-item {
+        padding: 10px;
+        width: fit-content;
+        margin: 20px 5px;
+    }
+}
+
+.shoe-container .shoe-item:hover {
+    transform: scale(1.01);
+}
+
+.shoe-container .shoe-item img {
+    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 5%;
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+}
+
+.shoe-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 5% 0;
+}
+
+.product-card h2 {
+    white-space: nowrap; /* Evita quebra de linha */
+    overflow: hidden;    /* Oculta texto que ultrapassa */
+    text-overflow: ellipsis; /* Adiciona os três pontos */
+    max-width: 100%;     /* Limita a largura */
+    font-size: 1.2rem;   /* Ajuste o tamanho conforme necessário */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.shoe-info-name {
+    font-size: large;
+    color: black;
+}
+
+.shoe-info-otherinfo {
+    font-size: medium;
+    color: black;
+}
+
+.shoe-item form button {
+    background: none; /* Remove o fundo padrão do botão */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 0; /* Remove o preenchimento do botão */
+    width: 60px;
+    height: 60px;
+    cursor: pointer; /* Adiciona o cursor de ponteiro */
+}
+
+.favorite-button-img {
+    width: 60px; 
+    height: 60px;
+}
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Garante que os itens não transbordem */
+}
+
+.carousel-items {
+    display: flex; /* Exibe os itens em uma linha */
+    transition: transform 0.3s ease-in-out; /* Animação ao mover */
+    width: fit-content; /* Ajusta a largura da div para acomodar todos os itens horizontalmente */
+}
+
+.shoe-item {
+    min-width: 300px; /* Largura mínima dos itens */
+    margin: 0 10px; /* Margem lateral */
+}
+
+/* Ajustes para botões */
+.prev, .next {
+    position: absolute;
+    top: 50%; /* Posiciona verticalmente ao meio */
+    transform: translateY(-50%); /* Ajusta para o centro verticalmente */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0; /* Inicia invisível */
+    transition: opacity 0.3s; /* Animação de transição */
+}
+
+.carousel:hover .prev, .carousel:hover .next {
+    opacity: 1; /* Torna visíveis ao passar o mouse */
+}
+
+.prev {
+    left: 10px; /* Lado esquerdo */
+}
+
+.next {
+    right: 10px; /* Lado direito */
+}

@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+    color: white;
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold; 
+}
+
+
+.highlight-section, .promotion-section, .new-arrival-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.highlight-section {
+    background: linear-gradient(45deg, #ffc234 , #8e08c4 );
+}
+
+.promotion-section {
+    background: linear-gradient(45deg, #ff2727, #8e08c4);
+}
+
+.new-arrival-section {
+    background: linear-gradient(45deg, #38ff4c, #8e08c4);
+}
+
+.carousel-inner a {
+    color: #ffff;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+
+.content {
+    max-width: 50%;
+    margin: 80px;
+}
+
+.content h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.content h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.image-container {
+    max-width: 50%;
+    height: 100%; /* Define a altura da imagem como 100% do carrossel */
+    overflow: hidden; /* Oculta o conteúdo que excede a altura */
+    display: flex; /* Adiciona flexbox para alinhar imagens */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.image-container img {
+    max-width: 85%;
+    max-height: 100%; /* Certifique-se de que a imagem não exceda a altura */
+    border-radius: 15px;
+    filter: drop-shadow(0px 0px 5px white);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, 10px);
+    }
+}
+
+/* Controle de navegação do carrossel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.carousel-control-prev-icon {
+    left:50px;
+}
+
+.carousel-control-next-icon{
+    right: 50px;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: black;
+}
+
+/* Ajustes para diferentes telas */
+@media (max-width: 768px) {
+    .carousel-item {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .image-container {
+        max-width: 100%;
+    }
+}

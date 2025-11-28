@@ -1,0 +1,256 @@
+body {
+    background-color: #f8f9fa;
+    color: black; 
+}
+
+.shoe-image {
+    border-radius: 20px;
+    max-width: 100%;
+    height: auto;
+    margin-left: -15px;
+}
+
+.rating {
+    font-size: 1.5rem;
+    color: #aaaaaa;
+}
+
+.size-options {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.size-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    font-weight: bold;
+    background-color: #fff;
+    color: #000;
+}
+
+.size-circle:hover {
+    background-color: rgba(0, 0, 0, 0.1);;
+    color: #000000;
+    border-color: #000;
+}
+
+.seller {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seller-image-container {
+    margin-bottom: 5px;
+}
+
+.user-image {
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%; 
+    border: 2px solid #e0e0e0;
+}
+
+.button-group {
+    margin-top: 30px; 
+}
+
+.rounded-button {
+    background-color: #000000;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    width: 80%;
+    max-width: 250px;
+    color: black;
+}
+
+.rounded-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #3924a3 !important;
+    color: #fff !important;
+    border-color: #3924a3 !important;
+}
+
+.btn-primary:hover {
+    background-color: #3f28b4 !important;
+    color: #fff !important;
+}
+
+.btn-outline-primary {
+    color: #000000 !important;
+    border-color: #000 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.btn-outline-secondary {
+    color: #000000 !important;
+    border-color: #3924a3 !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #fafafa !important;
+    color: #000000 !important;
+}
+
+.category-info p {
+    margin-bottom: 5px;
+}
+
+.description-container {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.description-title {
+    font-size: 1.5rem;
+}
+
+.shoe-title, .price {
+    font-weight: bold;
+}
+
+.price {
+    font-size: 1.8rem;
+    margin-top: 15px;
+    display: flex;
+}
+
+.card-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info .text-muted {
+    font-size: 14px;
+    color: #657786;
+    font-family: "Poppins", sans-serif;
+    font-weight: light;
+}
+
+.card-text {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: light;
+    margin-left: 60px;
+}
+
+.post-time{
+    margin: 0;
+}
+
+/* Shoe-item */
+a {
+    text-decoration: none !important;  /* Remove sublinhado de todos os links */
+}
+
+.shoe-item a {
+    text-decoration: none !important;  /* Garantir que os links dentro de .shoe-item também não tenham sublinhado */
+}
+
+
+
+.shoe-item {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.2s ease;
+}
+
+.shoe-info-name {
+    font-size: large;
+    color: black;
+    white-space: nowrap; /* Garante que o texto fique em uma única linha */
+    overflow: hidden; /* Esconde o texto que ultrapassar o limite */
+    text-overflow: ellipsis; /* Adiciona os "..." ao final do texto */
+    max-width: 230px; /* Ajuste a largura máxima para se adequar ao layout */
+    text-decoration: non;
+}
+
+.shoe-info-otherinfo {
+    font-size: medium;
+    color: black;
+}
+
+/* Estilo específico para o preço */
+.price {
+    font-size: medium; /* Ajuste para ser igual ao restante do texto */
+    color: black;
+}
+
+@media (min-width: 900px) {
+    .shoe-item {
+        padding-block: 20px;
+        width: 300px;
+        margin: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .shoe-item {
+        padding: 10px;
+        width: fit-content;
+        margin: 20px 5px;
+    }
+}
+
+.shoe-item:hover {
+    transform: scale(1.01);
+}
+
+.shoe-item img {
+    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 5%;
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+}
+
+.shoe-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 5% 0;
+}
+
+.shoe-info-name {
+    font-size: large;
+    color: black;
+}
+
+
+
+
+
